@@ -1,11 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Genómica y Biodiversidad del Caribe</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -21,10 +22,13 @@
               'jungle-green': '#2e8b57',
             }
           }
+        },
+        corePlugins: {
+          preflight: true
         }
       }
     </script>
-  <script type="importmap">
+    <script type="importmap">
 {
   "imports": {
     "react/": "https://aistudiocdn.com/react@^19.2.1/",
@@ -36,7 +40,7 @@
 }
 </script>
 </head>
-  <body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-caribbean-blue selection:text-white">
+  <body>
     <div id="root"></div>
   </body>
 </html>
