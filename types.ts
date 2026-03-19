@@ -1,3 +1,13 @@
+export enum Language {
+  ES = 'es',
+  EN = 'en'
+}
+
+export enum Theme {
+  LIGHT = 'light',
+  DARK = 'dark'
+}
+
 export enum MemberRole {
   LEADER = 'Lider del Grupo',
   RESEARCHER = 'Investigador',
@@ -6,24 +16,29 @@ export enum MemberRole {
   PRACTITIONER = 'Practicante'
 }
 
+export interface Translation {
+  [Language.ES]: string;
+  [Language.EN]: string;
+}
+
 export interface Member {
   name: string;
-  role: string;
-  description: string;
+  role: string | Translation;
+  description: string | Translation;
   category: MemberRole;
   image?: string;
 }
 
 export interface ResearchProject {
-  title: string;
-  description: string;
+  title: string | Translation;
+  description: string | Translation;
   link?: string;
 }
 
 export interface ResearchCategory {
   id: string;
-  title: string;
-  description?: string;
+  title: string | Translation;
+  description?: string | Translation;
   projects: ResearchProject[];
 }
 
@@ -34,6 +49,6 @@ export interface Publication {
 }
 
 export interface Supporter {
-  name: string;
-  subtext?: string;
+  name: string | Translation;
+  subtext?: string | Translation;
 }
